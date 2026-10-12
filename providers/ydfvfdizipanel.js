@@ -5,7 +5,7 @@
 var AYAR = {
   HOSTLAR: ['https://www.ydfvfdizipanel.ru', 'https://ydfvfdizipanel.ru'],
   SITE: 'https://www.ydfvfdizipanel.ru',
-  EKLENTI_ADI: 'sinewix',
+  EKLENTI_ADI: 'YdfvfdiziPanel',
   DEBUG_MODU: false,
   MAX_ALTERNATIF: 4,
   DOGRULA: true,
