@@ -1,12 +1,12 @@
 {
   "name": "ydfvfdizipanel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scrapers": [
     {
       "id": "ydfvfdizipanel",
       "name": "YdfvfdiziPanel",
       "description": "ydfvfdizipanel.ru film ve dizi izleme eklentisi",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "filename": "providers/ydfvfdizipanel.js",
       "supportedTypes": ["movie", "tv"],
       "enabled": true
