@@ -1,14 +1,17 @@
 {
   "name": "sinewix",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scrapers": [
     {
       "id": "sinewix",
       "name": "SineWix",
       "description": "SineWix paneli (deneme sürümü)",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "filename": "providers/sinewix.js",
-      "supportedTypes": ["movie", "tv"],
+      "supportedTypes": [
+        "movie",
+        "tv"
+      ],
       "enabled": true
     }
   ]
