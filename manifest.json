@@ -1,12 +1,12 @@
 {
   "name": "sinewix",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scrapers": [
     {
       "id": "sinewix",
       "name": "Sinewix",
       "description": "Sinewix film ve dizi, Türkçe (MediaFire / Drive / doğrudan bağlantılar)",
-      "version": "1.0.1",
+      "version": "1.0.0",
       "filename": "providers/sinewix.js",
       "supportedTypes": ["movie", "tv"],
       "enabled": true
