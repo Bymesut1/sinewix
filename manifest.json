@@ -1,29 +1,14 @@
 {
-  "name": "abidizicehennemi",
-  "version": "1.1.0",
+  "name": "sinewix",
+  "version": "0.0.1",
   "scrapers": [
-    {
-      "id": "abidizicehennemi",
-      "name": "AbiDiziCehennemi",
-      "description": "dizicehennemi.click film ve dizi, Türkçe",
-      "version": "1.0.8",
-      "filename": "providers/abidizicehennemi.js",
-      "supportedTypes": [
-        "movie",
-        "tv"
-      ],
-      "enabled": true
-    },
     {
       "id": "sinewix",
       "name": "SineWix",
       "description": "SineWix paneli (deneme sürümü)",
       "version": "0.0.1",
       "filename": "providers/sinewix.js",
-      "supportedTypes": [
-        "movie",
-        "tv"
-      ],
+      "supportedTypes": ["movie", "tv"],
       "enabled": true
     }
   ]
