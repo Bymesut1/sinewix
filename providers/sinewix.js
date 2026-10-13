@@ -404,12 +404,18 @@ function itemsOf(o) {
 function yearOf(it) { return parseInt(String(it.release_date || it.first_air_date || '').slice(0, 4), 10) || 0; }
 function isSerie(it) { return /^(serie|series|anime|tv)$/i.test(String(it.type || '')) || /serie|anime/i.test(String(it.media_type || '')); }
 
+function fuzzyHit(n, w) {
+  if (n.length < 4 || w.length < 4) return false; // kisa adlar (ör. "10") yanlis eslesmeyi onler
+  var shorter = Math.min(n.length, w.length), longer = Math.max(n.length, w.length);
+  if (shorter / longer < 0.5) return false; // uzunluklar cok farkliysa rastlantisal ic-gecme sayilmaz
+  return n.indexOf(w) >= 0 || w.indexOf(n) >= 0;
+}
 function pickItem(items, titles, year, isTv) {
   var want = titles.map(norm).filter(Boolean), best = null, bestScore = 0;
   items.forEach(function (it) {
     var names = [it.name, it.title, it.original_name, it.original_title].map(norm).filter(Boolean), s = 0;
     var exact = names.some(function (n) { return want.indexOf(n) >= 0; });
-    var part = !exact && names.some(function (n) { return want.some(function (w) { return w.length > 3 && (n.indexOf(w) >= 0 || w.indexOf(n) >= 0); }); });
+    var part = !exact && names.some(function (n) { return want.some(function (w) { return fuzzyHit(n, w); }); });
     if (exact) s += 10; else if (part) s += 3;
     var y = yearOf(it);
     if (year && y) { if (y === year) s += 4; else if (Math.abs(y - year) <= 1) s += 2; else if (!isTv) s -= 3; }
@@ -495,7 +501,7 @@ function resolveLink(l) {
 // ---------------- Ana akış ----------------
 function getStreamsInner(tmdbId, mediaType, season, episode, holder) {
   var isTv = (mediaType === 'tv' || mediaType === 'series');
-  dbg = ['v1.0.0'];
+  dbg = ['v1.1.0'];
   season = parseInt(season, 10) || 1; episode = parseInt(episode, 10) || 1;
   var base = 'https://api.themoviedb.org/3/' + (isTv ? 'tv' : 'movie') + '/' + tmdbId + '?api_key=' + TMDB_KEY;
   return Promise.all([getJson(base + '&language=tr-TR'), getJson(base + '&language=en-US').catch(function () { return {}; })]).then(function (both) {
