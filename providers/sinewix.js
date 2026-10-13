@@ -1,5 +1,5 @@
 // ============================================================
-//  sinewix — Nuvio scraper                                      v1.0.1
+//  sinewix — Nuvio scraper                                      v1.0.0
 //  Sinewix CloudStream eklentisinin (Wiojelt) Nuvio uyarlaması
 //  Akış: TMDB -> Sinewix araması -> detay (film / dizi) -> bağlantılar
 //        (MediaFire / Drive / doğrudan mp4-m3u8) -> oynatılabilir akış
